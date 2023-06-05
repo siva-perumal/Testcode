@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>p-task-2</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style-2.css" />
+</head>
+
+<body>
+  <!-- Main Section Starts -->
+  <main>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 first-col-first-row">
+          <nav class="navbar navbar-light ">
+            <div class="container">
+              <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-bars"></i>
+                <img class="fin-icon" src="./assets/finance-icon.png"> <span class="header-text">Finance</span>
+              </a>
+              <span class="img-text"><img class="img" src="./assets/img-1.png"> Andrew Tang</span>
+            </div>
+          </nav>
+
+          <br />
+          <div style="display: flex; justify-content: space-between;">
+            <p style="font-size: 32px; font-weight: 600; margin-left: 10px;">Overview</p>
+            <p type="button"
+              style="background-color: rgb(0, 0, 0); color: white; border-radius: 34px; font-size: 22px; padding: 7px 20px 7px 20px;">
+              + New Payment</p>
+          </div>
+          <div class="row row-2">
+            <div class="col second-row-box">
+              <p class="second-row-heading text-nowrap text-muted">Approved Transactions</p>
+              <div style="display: flex;">
+                <!--  <p style ="font-size: large; ">1,323</p>
+                                <p style =" margin-left: 5px;"><span class="arrow-icon"><i class="fa-sharp fa-solid fa-arrow-up"></i>20%</span></p> -->
+                <p class="third-row-sub-heading">1,720 <span class="arrow-icon"><i
+                      class="fa-sharp fa-solid fa-arrow-up "></i> +20% </span></p>
+              </div>
+            </div>
+
+            <div class="col second-row-box">
+              <p class="second-row-heading text-nowrap text-muted">Declined Transactions</p>
+              <div style="display: flex;">
+                <!-- <p style ="font-size: large; ">1,323</p>
+                              <p style =" margin-left: 5px;"><span class="arrow-icon"><i class="fa-sharp fa-solid fa-arrow-up"></i>2.03%</span></p> -->
+                <p class="third-row-sub-heading">720 <span class="arrow-icon"><i
+                      class="fa-sharp fa-solid fa-arrow-up "></i> +20% </span></p>
+              </div>
+            </div>
+
+            <div class="col second-row-box">
+              <p class="second-row-heading text-nowrap text-muted">Refunded Transactions</p>
+              <div style="display: flex;">
+                <!-- <p style ="font-size: large; ">1,323</p>
+                          <p style =" margin-left: 5px;"><span class="downarrow-icon"><i class="fa-solid fa-arrow-down"></i>20%</span></p> -->
+                <p class="third-row-sub-heading">87 <span class="downarrow-icon"><i
+                      class="fa-sharp fa-solid fa-arrow-up "></i> +20% </span></p>
+              </div>
+            </div>
+
+            <div class="col second-row-box">
+              <p class="second-row-heading text-nowrap text-muted">New Customers</p>
+              <div style="display: flex;">
+                <!--  <p style ="font-size: large; ">1,323</p>
+                      <p style =" margin-left: 5px;"><span class="downarrow-icon"><i class="fa-solid fa-arrow-down"></i>20%</span></p> -->
+                <p class="third-row-sub-heading">320 <span class="downarrow-icon"><i
+                      class="fa-sharp fa-solid fa-arrow-up "></i> +20% </span></p>
+              </div>
+            </div>
+          </div>
+          <!-- ----------------------Second-row-completed--------------- -->
+          <h2> Revenue</h2>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-3">
+                <P class="third-row-heading"><span class="box-icon">&#9632;</span> Gross Profit</P>
+                <p class="third-row-sub-heading">$48,560 <span class="arrow-icon"><i
+                      class="fa-sharp fa-solid fa-arrow-up "></i> +3.25% </span> <span
+                    class="third-row-small-text text-muted"> last year</span></p>
+              </div>
+              <div class="col-md-3">
+                <P class="third-row-heading"><span class="box-icon text-danger">&#9632;</span> Net Volume</P>
+                <p class="third-row-sub-heading">$29,540 <span class="arrow-icon"><i
+                      class="fa-sharp fa-solid fa-arrow-up "></i> +1.54% </span> <span
+                    class="third-row-small-text text-muted"> last year</span></p>
+              </div>
+              <div class="col-md-6">
+
+                <div class="d-flex justify-content-evenly">
+                  <div class="dropdown">
+                    <button class="btn dropdown-toggle dropdown-1" type="button" id="dropdownMenuButton1"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      This Year
+                    </button>
+                  </div>
+
+                  <div class="dropdown">
+                    <button class="btn dropdown-toggle dropdown-1" type="button" id="dropdownMenuButton1"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      Decline
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+          <!-- <body> -->
+            <canvas id="myChart" style="width:100%;max-width:100%;"></canvas>
+
+            <script>
+              const xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+              var canvas = document.getElementById('myChart');
+              var ctx = canvas.getContext('2d');
+
+              var gradient = ctx.createLinearGradient(0, 0, 0, 800);
+              gradient.addColorStop(0, '#EC21800D');
+              gradient.addColorStop(1, '#FF354C8F');
+
+              new Chart("myChart", {
+                type: "line",
+                data: {
+                  labels: xValues,
+                  datasets: [/* { 
+              data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+              borderColor: "red",
+              fill: false
+            }, */ {
+                      data: [1600, 1700, 2000, 2500, 2400, 2700, 4000, 5000, 6000, 7000],
+                      borderColor: "green",
+                      fill: false
+
+                    }, {
+                      data: [300, 700, 1600, 2000, 2200, 2100, 2000, 1000, 200, 100],
+                      borderColor: "red",
+                      fill: true,
+                      backgroundColor: gradient
+                    }]
+                },
+                options: {
+                  legend: { display: true },
+                 /*  text: 'Legend Title', */
+                  position: "top",
+                  alignment:"left",
+
+                }
+              });
+            </script>
+            <br />
+            <h1>Transaction</h1>
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Customer ID</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Account Data</th>
+                  <th scope="col">Transaction Date</th>
+                  <th scope="col">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class=" ">
+                  <td scope="row"><img class="table-img" src="./assets/img-1.png"> Mark antony</td>
+                  <td>Sale</td>
+                  <td><span class="badge badge-1">Approved</span></td>
+                  <td><img class="atm-icon" src="./assets/atm-icon.png">******8976</td>
+                  <td>8/15/17</td>
+                  <td>$113.8</td>
+                </tr>
+                <tr>
+                  <td scope="row"><img class="table-img" src="./assets/img-2.png"> Ally james</td>
+                  <td>Refund</td>
+                  <td><span class="badge badge-2">Declined</span></td>
+                  <td><img class="atm-icon" src="./assets/visa-icon.png">******8253</td>
+                  <td>2/11/12</td>
+                  <td>$127.8</td>
+                </tr>
+                <!-- <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr> -->
+              </tbody>
+            </table>
+
+        </div>
+
+        <!-- -----------------Left-side-completed------------------- -->
+        <div class="col-md-4 second-col">
+          <div class="row second-col-row-1">
+            <div class="d-flex justify-content-between">
+              <div class="row-1-text">
+                <h2>Monthly Volume</h2>
+              </div>
+
+              <div class="row-1-text">
+                <i class="fa-solid fa-xmark fa-2xl"></i>
+              </div> 
+            </div>
+            <div class="row">
+              <div class="nav">
+                <a class="active" href="#home">Home</a>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+              </div>
+            </div>
+<!-- --------------------First-row-completed----------------- -->
+
+      <h1 class="row-2-text">$2,243.34</h1>
+            <p class="row-3-text">This month day sale volume is 3.4% larger <br/> than last month.</p>
+            <img src="./assets/map.png">
+            <div class="d-flex justify-content-between">
+              <div class="row-1-text">
+                <p class="text-muted">06 Jan</p>
+              </div>
+
+              <div class="row-1-text">
+                <p class="text-muted">10 Feb</p>
+              </div> 
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <div class="row-1-text">
+                <h2>Volume By Card Type</h2>
+              </div>
+
+              <div class="row-1-text">
+                <img src="./assets/row-2-button.png">
+              </div> 
+            </div>
+<!-- -----------------Progress-bar-starts-------------- -->
+
+            <div class="row last-row">
+              <div class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar " style="width: 100%;"></div>
+              </div>
+            
+            <div class="d-flex justify-content-between">
+              <div class="row-1-text">
+                <h6>Visa</h6>
+              </div>
+
+              <div class="row-1-text">
+                <p>$1,500.31</p>
+              </div> 
+            </div>
+
+            <div class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar bg-success" style="width: 60%"></div>
+            </div>
+            
+            <div class="d-flex justify-content-between">
+              <div class="row-1-text">
+                <h6>Master card</h6>
+              </div>
+
+              <div class="row-1-text">
+                <p>$783.11</p>
+              </div> 
+            </div>
+
+            <div class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar bg-warning" style="width: 45%"></div>
+            </div>
+            
+            <div class="d-flex justify-content-between">
+              <div class="row-1-text">
+                <h6>American Express</h6>
+              </div>
+
+              <div class="row-1-text">
+                <p>$300.00</p>
+              </div> 
+            </div>
+
+            <div class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar bg-info" style="width: 30%"></div>
+            </div>
+            
+            <div class="d-flex justify-content-between">
+              <div class="row-1-text">
+                <h6>Discover</h6>
+              </div>
+
+              <div class="row-1-text">
+                <p>$60.50</p>
+              </div> 
+            </div>
+
+            <div class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar bg-dark" style="width: 23%"></div>
+            </div>
+            
+            <div class="d-flex justify-content-between">
+              <div class="row-1-text">
+                <h6>Capital One</h6>
+              </div>
+
+              <div class="row-1-text">
+                <p>$45.00</p>
+              </div> 
+            </div>
+
+            <div class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar bg-danger" style="width: 12%"></div>
+            </div>
+            
+            <div class="d-flex justify-content-between">
+              <div class="row-1-text">
+                <h6>Others</h6>
+              </div>
+
+              <div class="row-1-text">
+                <p>$15.75</p>
+              </div> 
+            </div>
+            
+            <!-- <progress id="file" value="60" max="100">  </progress>
+            <br/>
+            <progress id="file" value="40" max="100">  </progress>
+            <br/>
+            <progress id="file" value="30" max="100">  </progress>
+            <br/>
+            <progress id="file" value="18" max="100">  </progress>
+            <br/>
+            <progress id="file" value="5" max="100">  </progress> -->
+          </div>
+          <br/>
+          <div class="row">
+            <!-- <div class="col-4"></div> -->
+            <div class="d-flex justify-content-end  last-row-buttons">
+              <div class="last-row-button-1">
+                <button type="button" class="last-row-button-1">Export</button>
+              </div>
+
+              <div class="last-row-button-2">
+                <button class="last-row-button-2" type="button">Create Report</button>
+              </div> 
+            </div>
+            
+          </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+
+  </main>
+</body>
+
+</html>
